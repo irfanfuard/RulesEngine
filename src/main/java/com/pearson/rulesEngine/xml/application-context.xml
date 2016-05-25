@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- configure rule  -->
+    <bean id="Offer" class="com.pearson.rulesEngine.domain.Offer" scope="singleton">
+		
+   </bean>
+   
+    <bean id="CountryRule" class="com.pearson.rulesEngine.rules.CountryRule" scope="prototype">
+		<property name="countries">
+		<list>
+		<value>US</value>
+		<value>UK</value>
+		<value>UAE</value>
+		</list>
+   		</property>
+   		<property name="offer" >
+            <ref bean="Offer"/>
+             </property>
+   </bean>
+   <bean id="OrgIdRule" class="com.pearson.rulesEngine.rules.OrgIdRule" scope="prototype">
+		<property name="orgIds">
+		<list>
+		<value>Pearson</value>
+		<value>Google</value>
+		<value>Apple</value>
+		</list>
+   		</property>
+   		<property name="offer" >
+            <ref bean="Offer"/>
+             </property>
+   </bean>
+    <!-- configure rules engine -->
+    <bean id="rulesEngine" class="com.pearson.rulesEngine.RulesEngineFactoryBean">
+       
+        <property name="rules">
+            <list>
+                <ref bean="CountryRule"/>
+                <ref bean="OrgIdRule"/>
+            </list>
+        </property>
+       
+    </bean>
+
+</beans>

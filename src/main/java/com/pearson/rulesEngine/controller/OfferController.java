@@ -20,7 +20,7 @@ public class OfferController {
 		
 		
 	
-		ApplicationContext context = new ClassPathXmlApplicationContext("/com/pearson/rulesEngine/xml/application-context.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("rules-engine-bean.xml");
 		RulesEngine rulesEngine = (RulesEngine) context.getBean("rulesEngine");
 		Offer offer =(Offer)context.getBean("Offer");
 		CountryRule countryRule=(CountryRule)context.getBean("CountryRule");

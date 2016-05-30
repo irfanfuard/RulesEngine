@@ -7,10 +7,10 @@ The rules engine is developed using spring boot and the easyrules library. We ha
 
 To run the project
 ------------------
-*Clone the project into your local workspace
-*Clean and install project using following command - mvn clean install
-*Start the server using mvn spring-boot:run
-*Run the application in your local browser with localhost:8080
+* Clone the project into your local workspace
+* Clean and install project using following command - mvn clean install
+* Start the server using mvn spring-boot:run
+* Run the application in your local browser with localhost:8080
 
 
 

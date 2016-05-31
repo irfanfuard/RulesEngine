@@ -1,6 +1,5 @@
 package com.pearson.rulesEngine.dto;
 
-import java.util.Date;
 
 /**
  * Offer DTO
@@ -12,12 +11,12 @@ public class OfferDto {
 	private String offerId;
 	private String title;
 	private String alternateTitle; 	
-	private Date dateCreated;
-	private Date dateModified;
+	private String dateCreated;
+	private String dateModified;
 	private String createdBy;
 	private String lastModifiedBy;
-	private Date offerStartDate;
-	private Date offerEndDate;
+	private String offerStartDate;
+	private String offerEndDate;
 	private String description;
 	private String offerStatus;
 	private Integer orgId;
@@ -66,25 +65,25 @@ public class OfferDto {
 	/**
 	 * @return the dateCreated
 	 */
-	public Date getDateCreated() {
+	public String getDateCreated() {
 		return dateCreated;
 	}
 	/**
 	 * @param dateCreated the dateCreated to set
 	 */
-	public void setDateCreated(Date dateCreated) {
+	public void setDateCreated(String dateCreated) {
 		this.dateCreated = dateCreated;
 	}
 	/**
 	 * @return the dateModified
 	 */
-	public Date getDateModified() {
+	public String getDateModified() {
 		return dateModified;
 	}
 	/**
 	 * @param dateModified the dateModified to set
 	 */
-	public void setDateModified(Date dateModified) {
+	public void setDateModified(String dateModified) {
 		this.dateModified = dateModified;
 	}
 	/**
@@ -114,25 +113,25 @@ public class OfferDto {
 	/**
 	 * @return the offerStartDate
 	 */
-	public Date getOfferStartDate() {
+	public String getOfferStartDate() {
 		return offerStartDate;
 	}
 	/**
 	 * @param offerStartDate the offerStartDate to set
 	 */
-	public void setOfferStartDate(Date offerStartDate) {
+	public void setOfferStartDate(String offerStartDate) {
 		this.offerStartDate = offerStartDate;
 	}
 	/**
 	 * @return the offerEndDate
 	 */
-	public Date getOfferEndDate() {
+	public String getOfferEndDate() {
 		return offerEndDate;
 	}
 	/**
 	 * @param offerEndDate the offerEndDate to set
 	 */
-	public void setOfferEndDate(Date offerEndDate) {
+	public void setOfferEndDate(String offerEndDate) {
 		this.offerEndDate = offerEndDate;
 	}
 	/**

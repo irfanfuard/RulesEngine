@@ -1,19 +1,17 @@
-{
+[{
 	"offerId": "88f626e8-8403-442e-a863-ac300d3ba9b0",
 	"title": "Offer Test 01",
 	"alternateTitle": "test 01",
-	"dateCreated": "datetime",
-	"dateModified": "datetime",
+	"dateCreated": "2014-11-12T19:17:53.476Z",
+	"dateModified": "2014-11-12T19:17:53.476Z",
 	"createdBy": "string",
 	"lastModifiedBy": "string",
-	"offerStartDate": "datetime",
-	"offerEndDate": "datetime",
+	"offerStartDate": "2014-11-12T19:17:53.476Z",
+	"offerEndDate": "2014-11-12T19:17:53.476Z",
 	"description": "text",
 	"offerStatus": "text",
 	"orgId": 1234,
-	"areasServed": {
-		"countryCode": "US"
-	},
+	"countryCode": "US",
 	"offerType": {
 		"offerTypeId": 1234567890,
 		"offerTypeCode": "Access Card",
@@ -29,4 +27,34 @@
 	},
 	"productId": 9876543345789,
 	"sourceSystem": "string"
-}
+},
+{
+	"offerId": "88f626e8-8403-442e-a863-ac300d3ba9b0",
+	"title": "Offer Test 02",
+	"alternateTitle": "test 02",
+	"dateCreated": "2014-11-12T19:17:53.476Z",
+	"dateModified": "2014-11-12T19:17:53.476Z",
+	"createdBy": "string",
+	"lastModifiedBy": "string",
+	"offerStartDate": "2014-11-12T19:17:53.476Z",
+	"offerEndDate": "2014-11-12T19:17:53.476Z",
+	"description": "text",
+	"offerStatus": "text",
+	"orgId": 1234,
+	"countryCode": "US",
+	"offerType": {
+		"offerTypeId": 1234567890,
+		"offerTypeCode": "Access Card",
+		"definition": {
+			"price": 25,
+			"currency": "$",
+			"subscriptionDuration": 5,
+			"isbn": {
+				"isbn13": 6789098,
+				"hepmSync": true
+			}
+		}
+	},
+	"productId": 9876543345789,
+	"sourceSystem": "string"
+}]

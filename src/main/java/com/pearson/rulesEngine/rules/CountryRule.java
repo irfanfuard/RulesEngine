@@ -6,8 +6,8 @@ import org.easyrules.annotation.Rule;
 
 import com.pearson.rulesEngine.dto.OfferDto;
 
-/**Rule POJO which mapped with Rulebean in RulesBean
- * If this rule passed valid will give True
+/**
+ * A POJO which is mapped with country rule in the bean xml
  * @author UGUNAUD
  *
  */
@@ -64,20 +64,26 @@ public class CountryRule {
 		
 	}
 	
+	//Check if the country rule is valid or not
 	@Condition
 	public boolean checkCountry(){
 		boolean equals=false;
+		
+		//If the country code of the specific offer matches any of the codes mentioned in the bean xml return true
 		for(int i=0;i<countries.length;i++){
 			if(countries[i].equals(offerDto.getCountryCode())){
 				equals=true;
+			}else{
+				setValid(false);
 			}
 		}
 		return equals;
 	}
-
+	
+	//Perform action
 	@Action
 	public void validCountry(){
 		setValid(true);
-		System.out.println("Offer is in valid country");
+		System.out.println("Country code is valid for the specific offer");
 	}
 }

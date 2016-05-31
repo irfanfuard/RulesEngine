@@ -33,29 +33,28 @@ import com.pearson.rulesEngine.rules.OrgIdRule;
 public class OfferController {
 
 	/**
-	 * Get user context from route parameters ,regisgter rules against user
-	 * context and return valid offers for the user
+	 * Get user context from route parameters, Register and check rules through the bean xml and return valid offers to the user
 	 *
 	 */
 	@SuppressWarnings({ "resource" })
 	@RequestMapping(value = "/offer", method = RequestMethod.GET)
 	public List<OfferDto> getOffer(
-			@RequestParam(value = "userRole") String userRole,
-			@RequestParam(value = "countryCode") String countryCode,
-			@RequestParam(value = "orgId") String orgId) throws IOException,
+			@RequestParam(value = "userRole") String userRole) throws IOException,
 			ParseException {
-
+		
+		//Specify the rules engine bean xml file path which  is in the resources folder
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"rules-engine-bean.xml");
-
+		
+		//Initialize rules engine with the rules that needs to be checked
 		RulesEngine rulesEngine = (RulesEngine) context.getBean("rulesEngine");
 		CountryRule countryRule = (CountryRule) context.getBean("CountryRule");
 		OrgIdRule orgIdRule = (OrgIdRule) context.getBean("OrgIdRule");
 
-		List<OfferDto> offerList = new ArrayList<OfferDto>();
-		List<OfferDto> userOfferList = new ArrayList<OfferDto>();
+		List<OfferDto> jsonOfferList = new ArrayList<OfferDto>(); // A list object to convert offer json object to a pojo object list to send it to the rules engine bean xml
 
 		try {
+			//Add details to the Offer DTO list from the Offer json
 			final FileReader reader = new FileReader(
 					"src/main/resources/offers.json");
 			final JSONParser parser = new JSONParser();
@@ -63,34 +62,50 @@ public class OfferController {
 
 			Type listType = new TypeToken<ArrayList<OfferDto>>() {
 			}.getType();
-			offerList = new Gson().fromJson(offerJson, listType);
+			jsonOfferList = new Gson().fromJson(offerJson, listType);
 
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		for (OfferDto offer : offerList) {
+		
+		List<OfferDto> userOfferList = new ArrayList<OfferDto>(); // A new List object to add the valid offers to be displayed to the user
+		
+		//Check User context and validate rules through the bean xml
+		for (OfferDto offer : jsonOfferList) {
 
 			rulesEngine.clearRules();
 			countryRule.setOfferDto(offer);
 			orgIdRule.setOfferDto(offer);
-
+			
+			//If user role is a student apply country rule
 			if (userRole.equalsIgnoreCase("Student")) {
 				rulesEngine.registerRule(countryRule);
+				
+				rulesEngine.fireRules();
+				
+				//If country rule is valid for the specific offer add the offer to the newly created offer list
+				if (countryRule.isValid()) {
+					userOfferList.add(offer);
 
+				}
+				//If user role is a teacher apply both country and orgId rules
 			} else if (userRole.equalsIgnoreCase("Teacher")) {
 				rulesEngine.registerRule(countryRule);
 				rulesEngine.registerRule(orgIdRule);
-			}
-			rulesEngine.fireRules();
+				
+				rulesEngine.fireRules();
+				
+				//If country and orgId rule is valid for the specific offer add the offer to the newly created offer list
+				if (countryRule.isValid() && orgIdRule.isValid()) {
+					userOfferList.add(offer);
 
-			if (countryRule.isValid()) {
-				userOfferList.add(offer);
-
+				}
 			}
+
 
 			rulesEngine.clearRules();
-
 		}
+		
 		return userOfferList;
 	}
 

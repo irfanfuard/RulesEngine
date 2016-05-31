@@ -1,6 +1,6 @@
 [{
 	"offerId": "88f626e8-8403-442e-a863-ac300d3ba9b0",
-	"title": "Offer Test 01",
+	"title": "US Offer - 01",
 	"alternateTitle": "test 01",
 	"dateCreated": "2014-11-12T19:17:53.476Z",
 	"dateModified": "2014-11-12T19:17:53.476Z",
@@ -10,7 +10,132 @@
 	"offerEndDate": "2014-11-12T19:17:53.476Z",
 	"description": "text",
 	"offerStatus": "text",
-	"orgId": 1234,
+	"orgId": 1,
+	"countryCode": "US",
+	"offerType": {
+		"offerTypeId": 1234567890,
+		"offerTypeCode": "Access Card",
+		"definition": {
+			"price": 25,
+			"currency": "$",
+			"subscriptionDuration": 5,
+			"isbn": {
+				"isbn13": 6789098,
+				"hepmSync": true
+			}
+		}
+	},
+	"productId": 9876543345789,
+	"sourceSystem": "string"
+},
+
+{
+	"offerId": "88f626e8-8403-442e-a863-ac300d3ba9b0",
+	"title": "US Offer - 02",
+	"alternateTitle": "test 01",
+	"dateCreated": "2014-11-12T19:17:53.476Z",
+	"dateModified": "2014-11-12T19:17:53.476Z",
+	"createdBy": "string",
+	"lastModifiedBy": "string",
+	"offerStartDate": "2014-11-12T19:17:53.476Z",
+	"offerEndDate": "2014-11-12T19:17:53.476Z",
+	"description": "text",
+	"offerStatus": "text",
+	"orgId": 2,
+	"countryCode": "US",
+	"offerType": {
+		"offerTypeId": 1234567890,
+		"offerTypeCode": "Access Card",
+		"definition": {
+			"price": 25,
+			"currency": "$",
+			"subscriptionDuration": 5,
+			"isbn": {
+				"isbn13": 6789098,
+				"hepmSync": true
+			}
+		}
+	},
+	"productId": 9876543345789,
+	"sourceSystem": "string"
+},
+
+{
+	"offerId": "88f626e8-8403-442e-a863-ac300d3ba9b0",
+	"title": "US Offer - 03",
+	"alternateTitle": "test 01",
+	"dateCreated": "2014-11-12T19:17:53.476Z",
+	"dateModified": "2014-11-12T19:17:53.476Z",
+	"createdBy": "string",
+	"lastModifiedBy": "string",
+	"offerStartDate": "2014-11-12T19:17:53.476Z",
+	"offerEndDate": "2014-11-12T19:17:53.476Z",
+	"description": "text",
+	"offerStatus": "text",
+	"orgId": 3,
+	"countryCode": "US",
+	"offerType": {
+		"offerTypeId": 1234567890,
+		"offerTypeCode": "Access Card",
+		"definition": {
+			"price": 25,
+			"currency": "$",
+			"subscriptionDuration": 5,
+			"isbn": {
+				"isbn13": 6789098,
+				"hepmSync": true
+			}
+		}
+	},
+	"productId": 9876543345789,
+	"sourceSystem": "string"
+},
+
+{
+	"offerId": "88f626e8-8403-442e-a863-ac300d3ba9b0",
+	"title": "US Offer - 04",
+	"alternateTitle": "test 01",
+	"dateCreated": "2014-11-12T19:17:53.476Z",
+	"dateModified": "2014-11-12T19:17:53.476Z",
+	"createdBy": "string",
+	"lastModifiedBy": "string",
+	"offerStartDate": "2014-11-12T19:17:53.476Z",
+	"offerEndDate": "2014-11-12T19:17:53.476Z",
+	"description": "text",
+	"offerStatus": "text",
+	"orgId": 4,
+	"countryCode": "US",
+	"offerType": {
+		"offerTypeId": 1234567890,
+		"offerTypeCode": "Access Card",
+		"definition": {
+			"price": 25,
+			"currency": "$",
+			"subscriptionDuration": 5,
+			"isbn": {
+				"isbn13": 6789098,
+				"hepmSync": true
+			}
+		}
+	},
+	"productId": 9876543345789,
+	"sourceSystem": "string"
+},
+
+
+{
+	"offerId": "88f626e8-8403-442e-a863-ac300d3ba9b0",
+	"title": "US Offer - 05",
+	"alternateTitle": "test 02",
+	"dateCreated": "2014-11-12T19:17:53.476Z",
+	"dateModified": "2014-11-12T19:17:53.476Z",
+	"createdBy": "string",
+	"lastModifiedBy": "string",
+	"offerStartDate": "2014-11-12T19:17:53.476Z",
+	"offerEndDate": "2014-11-12T19:17:53.476Z",
+	"description": "text",
+	"offerStatus": "text",
+	"orgId": 6,
 	"countryCode": "US",
 	"offerType": {
 		"offerTypeId": 1234567890,
@@ -30,7 +155,132 @@
 },
 {
 	"offerId": "88f626e8-8403-442e-a863-ac300d3ba9b0",
-	"title": "Offer Test 02",
+	"title": "UK Offer - 01",
+	"alternateTitle": "test 01",
+	"dateCreated": "2014-11-12T19:17:53.476Z",
+	"dateModified": "2014-11-12T19:17:53.476Z",
+	"createdBy": "string",
+	"lastModifiedBy": "string",
+	"offerStartDate": "2014-11-12T19:17:53.476Z",
+	"offerEndDate": "2014-11-12T19:17:53.476Z",
+	"description": "text",
+	"offerStatus": "text",
+	"orgId": 1,
+	"countryCode": "UK",
+	"offerType": {
+		"offerTypeId": 1234567890,
+		"offerTypeCode": "Access Card",
+		"definition": {
+			"price": 25,
+			"currency": "$",
+			"subscriptionDuration": 5,
+			"isbn": {
+				"isbn13": 6789098,
+				"hepmSync": true
+			}
+		}
+	},
+	"productId": 9876543345789,
+	"sourceSystem": "string"
+},
+
+{
+	"offerId": "88f626e8-8403-442e-a863-ac300d3ba9b0",
+	"title": "UK Offer - 02",
+	"alternateTitle": "test 01",
+	"dateCreated": "2014-11-12T19:17:53.476Z",
+	"dateModified": "2014-11-12T19:17:53.476Z",
+	"createdBy": "string",
+	"lastModifiedBy": "string",
+	"offerStartDate": "2014-11-12T19:17:53.476Z",
+	"offerEndDate": "2014-11-12T19:17:53.476Z",
+	"description": "text",
+	"offerStatus": "text",
+	"orgId": 2,
+	"countryCode": "UK",
+	"offerType": {
+		"offerTypeId": 1234567890,
+		"offerTypeCode": "Access Card",
+		"definition": {
+			"price": 25,
+			"currency": "$",
+			"subscriptionDuration": 5,
+			"isbn": {
+				"isbn13": 6789098,
+				"hepmSync": true
+			}
+		}
+	},
+	"productId": 9876543345789,
+	"sourceSystem": "string"
+},
+
+{
+	"offerId": "88f626e8-8403-442e-a863-ac300d3ba9b0",
+	"title": "CA Offer - 01",
+	"alternateTitle": "test 01",
+	"dateCreated": "2014-11-12T19:17:53.476Z",
+	"dateModified": "2014-11-12T19:17:53.476Z",
+	"createdBy": "string",
+	"lastModifiedBy": "string",
+	"offerStartDate": "2014-11-12T19:17:53.476Z",
+	"offerEndDate": "2014-11-12T19:17:53.476Z",
+	"description": "text",
+	"offerStatus": "text",
+	"orgId": 1,
+	"countryCode": "CA",
+	"offerType": {
+		"offerTypeId": 1234567890,
+		"offerTypeCode": "Access Card",
+		"definition": {
+			"price": 25,
+			"currency": "$",
+			"subscriptionDuration": 5,
+			"isbn": {
+				"isbn13": 6789098,
+				"hepmSync": true
+			}
+		}
+	},
+	"productId": 9876543345789,
+	"sourceSystem": "string"
+},
+
+{
+	"offerId": "88f626e8-8403-442e-a863-ac300d3ba9b0",
+	"title": "CA Offer - 04",
+	"alternateTitle": "test 01",
+	"dateCreated": "2014-11-12T19:17:53.476Z",
+	"dateModified": "2014-11-12T19:17:53.476Z",
+	"createdBy": "string",
+	"lastModifiedBy": "string",
+	"offerStartDate": "2014-11-12T19:17:53.476Z",
+	"offerEndDate": "2014-11-12T19:17:53.476Z",
+	"description": "text",
+	"offerStatus": "text",
+	"orgId": 4,
+	"countryCode": "CA",
+	"offerType": {
+		"offerTypeId": 1234567890,
+		"offerTypeCode": "Access Card",
+		"definition": {
+			"price": 25,
+			"currency": "$",
+			"subscriptionDuration": 5,
+			"isbn": {
+				"isbn13": 6789098,
+				"hepmSync": true
+			}
+		}
+	},
+	"productId": 9876543345789,
+	"sourceSystem": "string"
+},
+
+
+{
+	"offerId": "88f626e8-8403-442e-a863-ac300d3ba9b0",
+	"title": "CA Offer - 06",
 	"alternateTitle": "test 02",
 	"dateCreated": "2014-11-12T19:17:53.476Z",
 	"dateModified": "2014-11-12T19:17:53.476Z",
@@ -40,8 +290,8 @@
 	"offerEndDate": "2014-11-12T19:17:53.476Z",
 	"description": "text",
 	"offerStatus": "text",
-	"orgId": 1234,
-	"countryCode": "US",
+	"orgId": 6,
+	"countryCode": "CA",
 	"offerType": {
 		"offerTypeId": 1234567890,
 		"offerTypeCode": "Access Card",

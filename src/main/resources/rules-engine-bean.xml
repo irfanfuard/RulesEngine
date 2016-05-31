@@ -2,45 +2,45 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
 <!-- configure rule  -->
-    <bean id="OfferDto" class="com.pearson.rulesEngine.dto.OfferDto" scope="singleton">
-		
-   </bean>
-   
+
+    <bean id="OfferDto" class="com.pearson.rulesEngine.dto.OfferDto" scope="singleton"></bean>
+    
     <bean id="CountryRule" class="com.pearson.rulesEngine.rules.CountryRule" scope="prototype">
 		<property name="countries">
-		<list>
-		<value>US</value>
-		<value>UK</value>
-		<value>UAE</value>
-		</list>
+			<list>
+			<value>US</value>
+			<value>UK</value>
+			<value>UAE</value>
+			</list>
    		</property>
    		<property name="offerDto" >
             <ref bean="OfferDto"/>
-             </property>
+        </property>
    </bean>
+   
    <bean id="OrgIdRule" class="com.pearson.rulesEngine.rules.OrgIdRule" scope="prototype">
 		<property name="orgIds">
-		<list>
-		<value>001</value>
-		<value>002</value>
-		<value>003</value>
-		</list>
+			<list>
+			<value>1</value>
+			<value>2</value>
+			<value>3</value>
+			</list>
    		</property>
    		<property name="offerDto" >
             <ref bean="OfferDto"/>
-             </property>
+        </property>
    </bean>
+    
     <!-- configure rules engine -->
     <bean id="rulesEngine" class="com.pearson.rulesEngine.RulesEngineFactoryBean">
-       
         <property name="rules">
             <list>
                 <ref bean="CountryRule"/>
                 <ref bean="OrgIdRule"/>
             </list>
         </property>
-       
     </bean>
 
 </beans>

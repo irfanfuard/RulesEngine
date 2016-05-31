@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 <!-- configure rule  -->
-    <bean id="Offer" class="com.pearson.rulesEngine.domain.Offer" scope="singleton">
+    <bean id="OfferDto" class="com.pearson.rulesEngine.dto.OfferDto" scope="singleton">
 		
    </bean>
    
@@ -15,20 +15,20 @@
 		<value>UAE</value>
 		</list>
    		</property>
-   		<property name="offer" >
-            <ref bean="Offer"/>
+   		<property name="offerDto" >
+            <ref bean="OfferDto"/>
              </property>
    </bean>
    <bean id="OrgIdRule" class="com.pearson.rulesEngine.rules.OrgIdRule" scope="prototype">
 		<property name="orgIds">
 		<list>
-		<value>Pearson</value>
-		<value>Google</value>
-		<value>Apple</value>
+		<value>001</value>
+		<value>002</value>
+		<value>003</value>
 		</list>
    		</property>
-   		<property name="offer" >
-            <ref bean="Offer"/>
+   		<property name="offerDto" >
+            <ref bean="OfferDto"/>
              </property>
    </bean>
     <!-- configure rules engine -->

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.pearson.rulesEngine.dto.OfferDto;
+import com.pearson.rulesEngine.rules.BaseRule;
 import com.pearson.rulesEngine.rules.CountryRule;
 import com.pearson.rulesEngine.rules.OrgIdRule;
 
@@ -48,8 +49,8 @@ public class OfferController {
 		
 		//Initialize rules engine with the rules that needs to be checked
 		RulesEngine rulesEngine = (RulesEngine) context.getBean("rulesEngine");
-		CountryRule countryRule = (CountryRule) context.getBean("CountryRule");
-		OrgIdRule orgIdRule = (OrgIdRule) context.getBean("OrgIdRule");
+		BaseRule<String> countryRule = (CountryRule) context.getBean("CountryRule");
+		BaseRule<Integer> orgIdRule = (OrgIdRule) context.getBean("OrgIdRule");
 
 		List<OfferDto> jsonOfferList = new ArrayList<OfferDto>(); // A list object to convert offer json object to a pojo object list to send it to the rules engine bean xml
 
@@ -74,13 +75,13 @@ public class OfferController {
 		for (OfferDto offer : jsonOfferList) {
 
 			rulesEngine.clearRules();
-			countryRule.setOfferDto(offer);
-			orgIdRule.setOfferDto(offer);
+			//countryRule.setOfferDto(offer);
+			orgIdRule.setOffer(offer);
+			countryRule.setOffer(offer);
 			
 			//If user role is a student apply country rule
 			if (userRole.equalsIgnoreCase("Student")) {
 				rulesEngine.registerRule(countryRule);
-				
 				rulesEngine.fireRules();
 				
 				//If country rule is valid for the specific offer add the offer to the newly created offer list

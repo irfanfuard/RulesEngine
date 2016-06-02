@@ -8,27 +8,38 @@
     <bean id="OfferDto" class="com.pearson.rulesEngine.dto.OfferDto" scope="singleton"></bean>
     
     <bean id="CountryRule" class="com.pearson.rulesEngine.rules.CountryRule" scope="prototype">
-		<property name="countries">
+		<property name="values">
 			<list>
 			<value>US</value>
 			<value>UK</value>
 			<value>UAE</value>
 			</list>
    		</property>
-   		<property name="offerDto" >
+   		<property name="offer" >
             <ref bean="OfferDto"/>
         </property>
    </bean>
-   
+   <bean id="RoleRule" class="com.pearson.rulesEngine.rules.RoleRule" scope="prototype">
+		<property name="values">
+			<list>
+			<value>US</value>
+			<value>UK</value>
+			<value>UAE</value>
+			</list>
+   		</property>
+   		<property name="offer" >
+            <ref bean="OfferDto"/>
+        </property>
+   </bean>
    <bean id="OrgIdRule" class="com.pearson.rulesEngine.rules.OrgIdRule" scope="prototype">
-		<property name="orgIds">
+		<property name="values">
 			<list>
 			<value>1</value>
 			<value>2</value>
 			<value>3</value>
 			</list>
    		</property>
-   		<property name="offerDto" >
+   		<property name="offer" >
             <ref bean="OfferDto"/>
         </property>
    </bean>

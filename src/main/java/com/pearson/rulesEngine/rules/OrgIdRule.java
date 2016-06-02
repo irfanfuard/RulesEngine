@@ -4,8 +4,6 @@ import org.easyrules.annotation.Action;
 import org.easyrules.annotation.Condition;
 import org.easyrules.annotation.Rule;
 
-import com.pearson.rulesEngine.dto.OfferDto;
-
 /**
  * A POJO which is mapped with orgId rule in the bean xml
  * @author UGUNAUD
@@ -13,62 +11,19 @@ import com.pearson.rulesEngine.dto.OfferDto;
  */
 @Rule(name = "OrgIdRule",
 description = "Validate organization rule")
-public class OrgIdRule {
-	
-	Integer[] orgIds;
-	OfferDto offerDto;
-	boolean valid;
-	
-	/**
-	 * @return the valid
-	 */
-	public boolean isValid() {
-		return valid;
-	}
+public class OrgIdRule extends BaseRule<Integer>{
 
-	/**
-	 * @param valid the valid to set
+	/* (non-Javadoc)
+	 * @see com.pearson.rulesEngine.rules.BaseRule#condition()
 	 */
-	public void setValid(boolean valid) {
-		this.valid = valid;
-	}
-
-	/**
-	 * @return the orgIds
-	 */
-	public Integer[] getOrgIds() {
-		return orgIds;
-	}
-
-	/**
-	 * @param orgIds the orgIds to set
-	 */
-	public void setOrgIds(Integer[] orgIds) {
-		this.orgIds = orgIds;
-	}
-
-	/**
-	 * @return the offerDto
-	 */
-	public OfferDto getOfferDto() {
-		return offerDto;
-	}
-
-	/**
-	 * @param offerDto the offerDto to set
-	 */
-	public void setOfferDto(OfferDto offerDto) {
-		this.offerDto = offerDto;
-	}
-
-	//Check if the orgId rule is valid or not
+	@Override
 	@Condition
-	public boolean checkOrgId(){
-		
+	public boolean condition() {
 		boolean equals=false;
-		//If the Org Id of the specific offer matches any of the codes mentioned in the bean xml return true
-		for(int i=0;i<orgIds.length;i++){
-			if(orgIds[i] == offerDto.getOrgId()){
+		
+		//If the country code of the specific offer matches any of the codes mentioned in the bean xml return true
+		for(int i=0;i<beanValues.length;i++){
+			if(beanValues[i]==offer.getOrgId()){
 				equals=true;
 			}else{
 				setValid(false);
@@ -77,10 +32,14 @@ public class OrgIdRule {
 		return equals;
 	}
 
-	//Perform action
+	/* (non-Javadoc)
+	 * @see com.pearson.rulesEngine.rules.BaseRule#action()
+	 */
+	@Override
 	@Action
-	public void validOrgId(){
-		setValid(true);
-		System.out.println("Offer is in valid Organization");
+	public void action() {
+		System.out.println("OrgId Rule validated");
+		super.action();
 	}
+	
 }

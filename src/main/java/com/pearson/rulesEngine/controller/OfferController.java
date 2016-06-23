@@ -11,9 +11,12 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
@@ -39,7 +42,8 @@ public class OfferController {
 	 */
 	@SuppressWarnings({ "resource" })
 	@RequestMapping(value = "/offer", method = RequestMethod.GET)
-	public List<OfferDto> getOffer(
+	@ResponseStatus(HttpStatus.OK)
+	public @ResponseBody List<OfferDto> getOffer(
 			@RequestParam(value = "userRole") String userRole) throws IOException,
 			ParseException {
 		
@@ -60,7 +64,7 @@ public class OfferController {
 					"src/main/resources/offers.json");
 			final JSONParser parser = new JSONParser();
 			final String offerJson = (String) parser.parse(reader).toString();
-
+                                                                          
 			Type listType = new TypeToken<ArrayList<OfferDto>>() {
 			}.getType();
 			jsonOfferList = new Gson().fromJson(offerJson, listType);

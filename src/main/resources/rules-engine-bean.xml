@@ -19,18 +19,7 @@
             <ref bean="OfferDto"/>
         </property>
    </bean>
-   <bean id="RoleRule" class="com.pearson.rulesEngine.rules.RoleRule" scope="prototype">
-		<property name="values">
-			<list>
-			<value>US</value>
-			<value>UK</value>
-			<value>UAE</value>
-			</list>
-   		</property>
-   		<property name="offer" >
-            <ref bean="OfferDto"/>
-        </property>
-   </bean>
+
    <bean id="OrgIdRule" class="com.pearson.rulesEngine.rules.OrgIdRule" scope="prototype">
 		<property name="values">
 			<list>
